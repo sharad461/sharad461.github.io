@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nepal Civil War Censorship: who called them terrorists?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Nepal Civil War: who called them terrorists?</h1>
+      <p class="sub">During the civil war (1996-2006) between Maoist insurgents and the Nepal government, the government labeled the Maoists "terrorists" in 2001. This label was removed in 2003, but reinforced later the same year. In 2005, the king assumed executive power and declared an emergency. We evaluate how one English weekly handled the government's directives to the media. The newspaper is <i>Nepali Times</i>; we use its print issues from 2001–2005. </p>
+      <dl class="stats">
+        <div><dt>546</dt><dd>uses of "terrorist"</dd></div>
+        <div><dt>275</dt><dd>about the Maoists</dd></div>
+        <div class="hot"><dt>2</dt><dd>by the paper's own staff</dd></div>
+      </dl>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button role="tab" id="tab-timeline" aria-controls="timeline" data-tab="timeline">Timeline</button>
+      <button role="tab" id="tab-who" aria-controls="who" data-tab="who">Who said it</button>
+      <button role="tab" id="tab-passages" aria-controls="passages" data-tab="passages">Passages</button>
+      <button role="tab" id="tab-army" aria-controls="army" data-tab="army">After the king's takeover</button>
+    </nav>
+
+    <section id="timeline" role="tabpanel" aria-labelledby="tab-timeline">
+      <p class="intro">Uses of "terrorist" for the Maoists, per weekly issue.</p>
+      <div class="legend">
+        <span><i style="background:var(--blue)"></i>Uses</span>
+        <span><i style="background:var(--orange)"></i>By staff</span>
+        <span><i style="background:var(--band)"></i>Label in force</span>
+        <span><i style="background:var(--grey)"></i>Unreadable issue</span>
+      </div>
+      <div class="chart" id="tl"></div>
+      <div class="periods" id="periods"></div>
+      <p class="foot">Share of all mentions of the Maoists that used the word "terrorist".</p>
+    </section>
+
+    <section id="who" role="tabpanel" aria-labelledby="tab-who" hidden>
+      <p class="intro">Whose words they were, by period.</p>
+      <div class="legend">
+        <span><i style="background:var(--blue)"></i>Quoted or reported</span>
+        <span><i style="background:var(--yellow)"></i>Other newspapers</span>
+        <span><i style="background:var(--green)"></i>Readers and columnists</span>
+        <span><i style="background:var(--orange)"></i>Staff</span>
+      </div>
+      <div class="who" id="whochart"></div>
+    </section>
+
+    <section id="passages" role="tabpanel" aria-labelledby="tab-passages" hidden>
+      <div class="filters" id="filters"></div>
+      <ol class="quotes" id="quotes"></ol>
+    </section>
+
+    <section id="army" role="tabpanel" aria-labelledby="tab-army" hidden>
+      <p class="intro">"Army" and "military" per issue, around the royal takeover of 1 February 2005.</p>
+      <div class="legend">
+        <span><i style="background:var(--blue)"></i>Mentions</span>
+        <span><i style="background:var(--orange)"></i>First three issues after the takeover</span>
+        <span><i style="background:var(--grey)"></i>Unreadable issue</span>
+        <span><i class="dash"></i>Usual (median before the takeover)</span>
+      </div>
+      <div class="chart" id="armychart"></div>
+    </section>
+
+    <footer>
+      <p>Source: <i>Nepali Times</i> print editions, <a href="https://media.nepalitimes.com/issues/epapers/58.pdf">media.nepalitimes.com</a>. Click any bar to open that issue. Webpage built with Claude.</p>
+    </footer>
+  </main>
+
+  <div class="tip" id="tip" hidden></div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
