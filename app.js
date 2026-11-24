@@ -103,10 +103,11 @@ function drawTimeline() {
 
 // ---------- period row
 document.getElementById("periods").innerHTML = PERIODS.map(p => `
-  <div class="per${p.on ? " on" : ""}">
+  <div class="per${p.on ? " on" : ""}" style="align-content:start">
     <span class="name">${esc(p.name)}</span>
     <span class="range">${esc(p.range)}</span>
     <span class="ratio">1 in ${p.one_in}</span>
+    ${p.unreadable ? `<span class="range">${p.readable} of ${p.readable + p.unreadable} issues readable</span>` : ""}
   </div>`).join("");
 
 // ---------- who chart
@@ -120,7 +121,7 @@ document.getElementById("periods").innerHTML = PERIODS.map(p => `
     }).join("");
     return `<div class="who-row">
       <div class="name">${esc(p.name)}<small>${esc(p.range)}</small></div>
-      <div class="track"><div class="stack" style="width:calc(${p.uses / max * 100}% - 40px)">${segs}</div><span class="tot">${p.uses}</span></div>
+      <div class="track"><div class="stack" style="width:calc((100% - 40px) * ${(p.uses / max).toFixed(4)});min-width:3px">${segs}</div><span class="tot">${p.uses}</span></div>
     </div>`;
   }).join("");
 })();
